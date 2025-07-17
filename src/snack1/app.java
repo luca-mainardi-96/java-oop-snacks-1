@@ -4,8 +4,8 @@ public class app {
 
     public static void main(String[] args) {
         
-        Studente s = new Studente("X", "Y", 125);
+        Studente s1 = new Studente("X", "Y", 25);
 
-
+        System.out.println(s1.descriviStudente());
     }
 }
