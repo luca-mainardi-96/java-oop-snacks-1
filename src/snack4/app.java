@@ -6,19 +6,18 @@ public class app {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        Domanda domanda = new Domanda(
+        Domanda d1 = new Domanda(
             "Qual è la capitale d'Italia?",
             "Roma"
         );
 
-        System.out.println("DOMANDA:");
-        System.out.println(domanda.getTesto());
+        System.out.println("Domanda:");
+        System.out.println(d1.getTesto());
         System.out.print("La tua risposta: ");
         String rispostaUtente = input.nextLine();
 
-        domanda.stampaRisultato(rispostaUtente);
+        d1.stampaRisultato(rispostaUtente);
 
-        input.close();
     }
 }
 
