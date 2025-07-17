@@ -2,30 +2,29 @@ package snack2;
 
 public class ContoBancario {
     
-    private int numeroConto;
+    private String numeroConto;
     private double saldo;
-    private double deposito;
-    private double prelievo;
 
-    public ContoBancario(int numeroConto){
+    public ContoBancario(String numeroConto){
         this.numeroConto = numeroConto;
         saldo = 0;
     }
 
-    public double deposito(double deposito){
-        this.deposito = deposito;
-        saldo = saldo + deposito;
-        return saldo;
+    public void deposito(double importo){
+        if(importo >= 0){
+            this.saldo += importo; 
+        }else{
+            System.out.println("Impossibile depositare importo negativo.");
+        }
     }
 
-    public double prelievo(double prelievo){
-        this.prelievo = prelievo;
-        if((saldo-prelievo)<0){
-            System.out.println("Saldo insufficiente per procedere con l'operazione.");
+    public void prelievo(double importo){
+        if(importo >= 0 && importo <= saldo){
+            this.saldo -= importo;
         }else{
-            saldo = saldo - prelievo;
+            System.out.println("Impossibile prelevare");
         }
-        return saldo;
+        
     }
 
     public double getSaldo() {
